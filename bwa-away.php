@@ -74,7 +74,8 @@ $away->eintrag_hinzufuegen();
 
 //-------- end class eintrag hinzufügen ----------
 }
- 
+ // prüfe ob editirt wird
+pruef_edit();
 	 
 	 // formular
 	 
@@ -87,7 +88,7 @@ Benutzername
 <br/>-->
 <label for="grund">
 Grund<br />
-<textarea rows="4" cols="50" name="grund" form="abmeldung" id="grund" required></textarea>
+<textarea rows="4" cols="50" name="grund" form="abmeldung" id="grund" required>'.$away->grund.'</textarea>
 <!--<input type="text" id="grund" name="grund">-->
 </label>
 <br/>

@@ -42,8 +42,24 @@ class away_entry {
         $wpdb->delete($wpdb->prefix.'bwa_away', array('id' => $entry));
     }
     
-    public function eintrag_bearbeiten() {
+    public function eintrag_bearbeiten($entry) {
         echo "wird bearbeitet";
+        //return $entry;
+        //datenbankabfrage und eintrag in ein array
+        global $wpdb;
+
+        $query = "SELECT id, user, text, start, end FROM ".$wpdb->prefix."bwa_away WHERE id = ".$entry;
+        //print_r($query);
+           $result =   $wpdb->get_results($query);
+           foreach ( $result as $inhalt )
+           {
+               $this->end_date = $inhalt->end;
+               $this->entry_id = $inhalt->id;
+               $this->grund = $inhalt->text;
+               $this->start_date = $inhalt->start;
+               $this->user = $inhalt->user;
+               echo $inhalt->text;
+           }
     }
     public function eintrag_ausgabe() {
         // wird nicht benötigt. belassen wir bei der funktion!!!
