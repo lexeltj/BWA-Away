@@ -38,7 +38,6 @@ class away_entry {
     
     public function eintrag_loeschen($entry) {
         global $wpdb;
-        //echo "wird gelöscht";
         echo " eintrag mit id: ".$entry." gelöscht";
         $wpdb->delete($wpdb->prefix.'bwa_away', array('id' => $entry));
     }
@@ -47,7 +46,6 @@ class away_entry {
         echo "wird bearbeitet";
     }
     public function eintrag_ausgabe() {
-        echo "wird angezeigt";
         // wird nicht benötigt. belassen wir bei der funktion!!!
     }
 }
