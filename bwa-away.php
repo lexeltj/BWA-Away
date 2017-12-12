@@ -136,6 +136,5 @@ echo "</table>";
  }
  
  
-add_shortcode("bwa-away", "bwa_awaycal"); 
-//bwa_awaycal();
+add_shortcode("bwa-away", "bwa_awaycal");
  ?>
