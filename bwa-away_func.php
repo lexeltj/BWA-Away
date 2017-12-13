@@ -67,4 +67,12 @@ if( current_user_can('administrator')){
     }
 }
 
+function pruef_edit() {
+    if ($_GET['edit']) {
+        $wert = 'testtext';
+        $eintrag_edit = new away_entry();
+        $eintrag_edit->eintrag_bearbeiten($_GET['edit']);
+        //return $wert;
+    }
+}
 ?>
