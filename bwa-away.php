@@ -88,25 +88,44 @@ Benutzername
 <br/>-->
 <label for="grund">
 Grund<br />
-<textarea rows="4" cols="50" name="grund" form="abmeldung" id="grund" required>'.$away->grund.'</textarea>
+<textarea rows="4" cols="50" name="grund" form="abmeldung" id="grund" required>'.$_POST['grund'].'</textarea>
 <!--<input type="text" id="grund" name="grund">-->
 </label>
 <br/>
 <label for="datum1">
 von<br />
-<input type="date" id="datum1" name="datum1" value="tt.mm.jjjj">
+<input type="date" id="datum1" name="datum1" value="';
+if ($_GET['edit']) {
+    echo $_POST['start'];
+}else {
+    echo 'tt.mm.jjjj';
+}
+echo '">
 </label>
 
 <br/>
 
 <label for="datum2">
 bis<br />
-<input type="date" id="datum2" name="datum2" value="tt.mm.jjjj">
-</label>
-<br/>
-<input type="submit" />
+<input type="date" id="datum2" name="datum2" value="';
+if ($_GET['edit']) {
+    echo $_POST['end'];
+}else {
+    echo 'tt.mm.jjjj';
+}
 
-</form>
+echo '">
+</label>
+<br/>';
+
+if ($_GET['edit']) {
+    echo '<input type="submit" value="Ändern" />';
+}else {
+    echo '<input type="submit" value="Eintragen" />';
+}
+
+
+echo '</form>
 ';
 
   } else {
